@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import axios from "axios";
+
 import "./../assets/effects.scss";
 import { SERVER_HOST } from "../config";
 import Widget from '../components/Widget';
