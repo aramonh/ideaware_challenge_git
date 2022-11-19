@@ -1,5 +1,5 @@
 export interface PostModel {
-    author:string,
-    date:Date,
-    message:string
+  author: string;
+  date: string;
+  message: string;
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import "./index.css";
 import { createTheme } from "@mui/material/styles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { routes as appRoutes } from "./routes";
 import Layout from "./components/Layout";
-
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
         light: "#3546F2",
         dark: "#3546F2",
         contrastText: "#000",
-      }
+      },
     },
   });
 

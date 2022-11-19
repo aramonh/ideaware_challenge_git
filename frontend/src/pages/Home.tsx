@@ -1,69 +1,43 @@
 import React, { ReactElement, FC } from "react";
 
-import {
-  Box,
-  Chip,
-  IconButton,
-  ButtonGroup,
-  Stack,
-  TextField,
-  Grid,
-  SxProps,
-  Typography,
-} from "@mui/material";
+import { Box, Stack, Grid, Typography } from "@mui/material";
 
-
-import "./../assets/effects.scss";
 import { SERVER_HOST } from "../config";
-import Widget from '../components/Widget';
+import Widget from "../components/Widget";
 const Home: FC<any> = (): ReactElement => {
-  //const formDataDefault: UserData = {firstName: "", lastName: "", age: ""}
-
-  // React.useEffect(() => {
-  //   if (textSearch !== "") {
-  //     setPage(1)
-
-  //     axios.get(`${SERVER_HOST}/api/movies/t?title=${textSearch}`).then((response) => {
-  //       setMovies(response.data)
-  //     }).catch((e) => {
-  //     })
-
-  //   } else {
-  //     axios.get(`${SERVER_HOST}/api/movies/p?page=${page}`).then((response) => {
-  //       setMovies(response.data)
-  //     }).catch((e) => {
-  //     })
-  //   }
-
-  // }, [page, textSearch])
-
   return (
     <>
       {/* Mobile */}
       <Box
         sx={{
           flexGrow: 1,
-          display: { xs: "flex", sm: "none" },
+          display: { xs: "flex", md: "none" },
           justifyContent: "center",
           alignItems: "center",
           mx: "auto",
-          width:"50%",
-          heigth:"100%",
-          position:"relative",
-          top:"200px"
+          width: "100vw",
+          heigth: "100%",
+          position: "relative",
+          top: "200px",
         }}
       >
         <Grid container>
-          <Grid item sx={{ mx: "auto" }} sm={12}>widget</Grid>
-          <Grid item  sm={12}>
+          <Grid item sx={{ mx: "auto" }} xs={12}>
+            <Widget
+              FeedUrl={SERVER_HOST}
+              postNumber={3}
+              updateInterval={5000}
+            ></Widget>
+          </Grid>
+          <Grid item xs={12} sx={{ mx: "auto" }}>
             <Stack
               direction="column"
               justifyContent="center"
               alignItems="center"
               spacing={2}
-              sx={{  textAlign: "center",width:"50%" }}
+              sx={{ textAlign: "center", width: "90%", mx: "auto" }}
             >
-              <Box sx={{ textAlign: "left" }}>
+              <Box sx={{ textAlign: "left", mx: "auto" }}>
                 <Typography
                   sx={{
                     fontFamily: "Raleway",
@@ -112,27 +86,12 @@ const Home: FC<any> = (): ReactElement => {
           </Grid>
         </Grid>
       </Box>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      {/* Browser */}
 
+      {/* Browser */}
       <Box
         sx={{
           flexGrow: 1,
-          display: { xs: "none", sm: "flex" },
+          display: { xs: "none", md: "flex" },
           justifyContent: "center",
           alignItems: "center",
           mx: "auto",
@@ -155,7 +114,11 @@ const Home: FC<any> = (): ReactElement => {
             </Stack>
           </Grid>
           <Grid item sx={{ mx: "auto" }} sm={12}>
-            <Widget  FeedUrl={SERVER_HOST}  postNumber={3} updateInterval={5000}  ></Widget>
+            <Widget
+              FeedUrl={SERVER_HOST}
+              postNumber={3}
+              updateInterval={5000}
+            ></Widget>
           </Grid>
           <Grid item sx={{ mx: "auto" }} sm={12}>
             <Stack

@@ -1,20 +1,6 @@
 import React, { FC, ReactElement } from "react";
-import {
-  Box,
-  Grid,
-  Button,
-  Stack,
-  Link,
-  Container,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import "./../assets/effects.scss";
+import { Box, Grid, Button, Stack, Typography } from "@mui/material";
 import background from "../assets/bghead.png";
-
 const Navbar: FC = (): ReactElement => {
   return (
     <>
@@ -22,15 +8,22 @@ const Navbar: FC = (): ReactElement => {
       <Box
         sx={{
           flexGrow: 1,
-          display: { xs: "flex", sm: "none" }, height:"100%",
-          width: "100%"
+          display: { xs: "flex", md: "none" },
+          height: "100%",
+          mx: "auto",
+          width: "100%",
         }}
       >
         <Grid container>
           <Grid
             item
-            sm={12}
-            sx={{ bgcolor: "#6424FF", width: "100%", height: "180px" }}
+            xs={12}
+            sx={{
+              bgcolor: "#6424FF",
+              width: "100vw",
+              height: "180px",
+              mx: "auto",
+            }}
           >
             <a
               style={{
@@ -41,9 +34,10 @@ const Navbar: FC = (): ReactElement => {
               }}
               href="/"
             >
-              <img src={require("../assets/logo1.png")} />
+              <img src={require("../assets/logo1.png")} alt="logo" />
             </a>
             <Button
+              className={"zoom_out"}
               sx={{
                 position: "absolute",
                 width: "169px",
@@ -142,6 +136,7 @@ const Navbar: FC = (): ReactElement => {
                   outlines YOUR Readiness Rating.
                 </Typography>
                 <Button
+                  className={"zoom_out"}
                   sx={{
                     p: 2,
                     background: "#06F48A",
@@ -179,7 +174,7 @@ const Navbar: FC = (): ReactElement => {
       <Box
         sx={{
           flexGrow: 1,
-          display: { xs: "none", sm: "flex" },
+          display: { xs: "none", md: "flex" },
           height: "770px",
         }}
       >
@@ -189,7 +184,7 @@ const Navbar: FC = (): ReactElement => {
               style={{ position: "absolute", top: "50px", left: "80px" }}
               href="/"
             >
-              <img src={require("../assets/logo1.png")} />
+              <img src={require("../assets/logo1.png")} alt="logo" />
             </a>
             <Box
               sx={{
@@ -258,6 +253,7 @@ const Navbar: FC = (): ReactElement => {
                   outlines YOUR Readiness Rating.
                 </Typography>
                 <Button
+                  className={"zoom_out"}
                   sx={{
                     width: "347px",
                     height: "86px",
@@ -303,6 +299,7 @@ const Navbar: FC = (): ReactElement => {
             }}
           >
             <Button
+              className={"zoom_out"}
               sx={{
                 position: "absolute",
                 width: "169px",
