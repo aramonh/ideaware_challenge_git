@@ -1,0 +1,1 @@
+export const SERVER_HOST =  "http://api.massrelevance.com/MassRelDemo/kindle.json"
